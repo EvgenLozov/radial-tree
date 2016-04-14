@@ -11,13 +11,11 @@ public class VectorAlgebraTest {
 
     @Test
     public void testAngle() throws Exception {
-        Vector vector = new Vector(1, 0);
-
-
-        VectorAlgebra.angle(vector, new Vector(-1,0));
+        VectorAlgebra.tangentAngle(3,4);
 
 
     }
+
 
     @Test
     public void getNeighbor() throws Exception {

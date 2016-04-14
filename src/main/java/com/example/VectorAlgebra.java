@@ -18,7 +18,7 @@ public class VectorAlgebra {
 
     public static double tangentAngle(double inRadius, double outRadius)
     {
-        return 4 * Math.asin(inRadius/outRadius);
+        return 2 * Math.acos(inRadius/outRadius);
     }
 
     public static Vector rotateVector(Vector vector, double angle)
