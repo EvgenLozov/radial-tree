@@ -54,8 +54,8 @@ public class RadialTree {
         List<Vector> withChildren = sameLevelNodes.stream().filter(node -> !node.getChilds().isEmpty())
                 .map(Node::getVector).collect(Collectors.toList());
 
-        double rightLimitAngle = getBisecLimit(parent.getVector(), withChildren, false);
-        double leftLimitAngle = getBisecLimit(parent.getVector(), withChildren, true);
+        double rightLimitAngle = getBisecLimit(parent.getVector(), withChildren, false, level);
+        double leftLimitAngle = getBisecLimit(parent.getVector(), withChildren, true, level);
 
         double segment = rightLimitAngle + leftLimitAngle;
 
@@ -74,9 +74,9 @@ public class RadialTree {
 
     }
 
-    public double getBisecLimit(Vector parent, List<Vector> withChildren, boolean direction)
+    public double getBisecLimit(Vector parent, List<Vector> withChildren, boolean direction, int level)
     {
-        double tangentAngle = tangentAngle(radius, radius * 2);
+        double tangentAngle = tangentAngle(radius, radius * 2) * (1 - level * 0.05 );
 
         Optional<Double> bisecAngle = VectorAlgebra.getNeighborAngle(parent, withChildren, direction);
 
