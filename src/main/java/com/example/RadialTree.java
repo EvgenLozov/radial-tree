@@ -76,7 +76,7 @@ public class RadialTree {
 
     public double getBisecLimit(Vector parent, List<Vector> withChildren, boolean direction, int level)
     {
-        double tangentAngle = tangentAngle(radius * level, radius * level+1) * (1 - level * 0.05 );
+        double tangentAngle = tangentAngle(radius * level, radius * (level+1)) * (1 - level * 0.05 );
 
         Optional<Double> bisecAngle = VectorAlgebra.getNeighborAngle(parent, withChildren, direction);
 
