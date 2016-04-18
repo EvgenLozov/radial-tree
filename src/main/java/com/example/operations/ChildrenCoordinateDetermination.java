@@ -41,7 +41,7 @@ public class ChildrenCoordinateDetermination implements SameLevelNodeOperation {
 
         for (int i = 0; i < parent.getChilds().size(); i++) {
             Vector vector = VectorAlgebra.rotateVector(rightLimitVector, childAngle * (i+1));
-            vector = VectorAlgebra.multiply(vector, nextLevelRadius/leftLimitAngle);
+            vector = VectorAlgebra.multiply(vector, nextLevelRadius/levelRadius);
 
             parent.getChilds().get(i).setVector(vector );
 
